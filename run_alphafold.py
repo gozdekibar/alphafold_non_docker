@@ -142,6 +142,8 @@ RELAX_STIFFNESS = 10.0
 RELAX_EXCLUDE_RESIDUES = []
 RELAX_MAX_OUTER_ITERATIONS = 3
 
+gozde_data_dir = "/project/Rif1"
+
 
 def _check_flag(flag_name: str,
                 other_flag_name: str,
@@ -414,7 +416,7 @@ def main(argv):
     else:
       model_config.data.eval.num_ensemble = num_ensemble
     model_params = data.get_model_haiku_params(
-        model_name=model_name, data_dir=FLAGS.data_dir)
+        model_name=model_name, data_dir=gozde_data_dir)
     model_runner = model.RunModel(model_config, model_params)
     model_runners[model_name] = model_runner
 
